@@ -5,14 +5,13 @@
    - For `i <- 0` to `avail - 1`:
     
        - If `polynomials[i].finish != 0` then:
-         - **Move Valid Polynomial**:
            - If `i != newAvail` then:
              - `polynomials[newAvail] <- polynomials[i]`
          - **Increment `newAvail`**:
            - `newAvail <- newAvail + 1`
    - `avail <- newAvail`
 
-### Example
+##example
 
 **Initial State**:
 - `polynomials[0] <- {1, 5}`
