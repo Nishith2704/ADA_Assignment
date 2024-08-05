@@ -1,17 +1,15 @@
 ## Algorithm: `compactPolynomials`
    - `newAvail <- 0`
 
-2. **Iterate Through Array**:
+
    - For `i <- 0` to `avail - 1`:
-     - **Check Validity**:
+    
        - If `polynomials[i].finish != 0` then:
          - **Move Valid Polynomial**:
            - If `i != newAvail` then:
              - `polynomials[newAvail] <- polynomials[i]`
          - **Increment `newAvail`**:
            - `newAvail <- newAvail + 1`
-
-3. **Update Available Count**:
    - `avail <- newAvail`
 
 ### Example
