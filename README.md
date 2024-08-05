@@ -9,12 +9,5 @@
 
    - `avail <- newAvail`
 
-### Example
-
-**Initial State**:
-- `polynomials[0] <- {1, 5}`
-- `polynomials[1] <- {2, 0}`
-- `polynomials[2] <- {3, 6}`
-- `avail <- 3`
 
 
