@@ -1,4 +1,4 @@
-## Algorithm: `compactPolynomials()`
+## Algorithm: `compactPolynomials{`
    - `newAvail <- 0`
    - For `i <- 0` to `avail - 1`:
      - If `polynomials[i].finish != 0` then:
@@ -8,6 +8,6 @@
 
 
    - `avail <- newAvail`
-
+}
 
 
