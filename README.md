@@ -19,12 +19,10 @@
 - `polynomials[2] <- {3, 6}`
 - `avail <- 3`
 
-**Execution**:
 
-1. **Initialize**:
    - `newAvail <- 0`
 
-2. **Iteration**:
+
    - **For `i <- 0`**:
      - `polynomials[0].finish != 0` (Valid)
        - `i == newAvail` (0 == 0)
@@ -39,7 +37,7 @@
        ]- `polynomials[1] <- polynomials[2]`
        - `newAvail <- newAvail + 1` (2)
 
-3. **Update Available Count**:
+
    - `avail <- newAvail` (2)
 
 **output
