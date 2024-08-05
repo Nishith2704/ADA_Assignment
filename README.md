@@ -1,34 +1,53 @@
 ## Algorithm: `compactPolynomials`
 
-### Purpose
+1. **Initialize**:
+   - `newAvail <- 0`
 
-The `compactPolynomials` function removes polynomials with a `finish` value of 0 from the `polynomials` array and shifts the valid polynomials to the beginning of the array.
+2. **Iterate Through Array**:
+   - For `i <- 0` to `avail - 1`:
+     - **Check Validity**:
+       - If `polynomials[i].finish != 0` then:
+         - **Move Valid Polynomial**:
+           - If `i != newAvail` then:
+             - `polynomials[newAvail] <- polynomials[i]`
+         - **Increment `newAvail`**:
+           - `newAvail <- newAvail + 1`
 
-### Detailed Steps
-
-1. **Initialize `newAvail`**:
-   - Set `newAvail` to 0. This variable will track the position in the array where the next valid polynomial should be placed.
-
-2. **Iterate Through the Array**:
-   - Loop through each polynomial in the `polynomials` array using an index `i` ranging from 0 to `avail - 1`.
-
-3. **Check Polynomial Validity**:
-   - For each polynomial at index `i`, check if its `finish` value is not zero (`polynomials[i].finish != 0`).
-     - If the polynomial is valid:
-       - **Move Valid Polynomial**:
-         - If `i` is not equal to `newAvail`, update `polynomials[newAvail]` with the polynomial at index `i`. This operation moves the valid polynomial to the `newAvail` index.
-       - **Increment `newAvail`**:
-         - Increase the `newAvail` index by 1 to prepare for the next valid polynomial.
-
-4. **Update Available Count**:
-   - After the loop, set `avail` to `newAvail`. This updates the count of valid polynomials in the array to reflect the number of valid polynomials after compaction.
+3. **Update Available Count**:
+   - `avail <- newAvail`
 
 ### Example
 
-Assume the following initial state of `polynomials` and `avail`:
+**Initial State**:
+- `polynomials[0] <- {1, 5}`
+- `polynomials[1] <- {2, 0}`
+- `polynomials[2] <- {3, 6}`
+- `avail <- 3`
 
-```c
-polynomials[0] = {1, 5}
-polynomials[1] = {2, 0}
-polynomials[2] = {3, 6}
-avail = 3
+**Execution**:
+
+1. **Initialize**:
+   - `newAvail <- 0`
+
+2. **Iteration**:
+   - **For `i <- 0`**:
+     - `polynomials[0].finish != 0` (Valid)
+       - `i == newAvail` (0 == 0)
+       - No change needed
+       - `newAvail <- newAvail + 1` (1)
+   - **For `i <- 1`**:
+     - `polynomials[1].finish == 0` (Invalid)
+       - No action needed
+   - **For `i <- 2`**:
+     - `polynomials[2].finish != 0` (Valid)
+       - `i != newAvail` (2 != 1)
+       - `polynomials[1] <- polynomials[2]`
+       - `newAvail <- newAvail + 1` (2)
+
+3. **Update Available Count**:
+   - `avail <- newAvail` (2)
+
+**Final State**:
+- `polynomials[0] <- {1, 5}`
+- `polynomials[1] <- {3, 6}`
+- `avail <- 2`
